@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "RideM8",
-    "slug": "RideM8",
+    "slug": "ridem8",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -28,8 +28,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
+          "image": "./assets/images/splash.png",
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
