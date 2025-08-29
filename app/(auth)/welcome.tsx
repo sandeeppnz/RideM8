@@ -1,3 +1,4 @@
+import CustomButton from "@/components/CustomButton";
 import { onboarding } from "@/constants";
 import { router } from "expo-router";
 import React, { useRef, useState } from "react";
@@ -10,6 +11,7 @@ const welcome = () => {
   const swiperRef = useRef<Swiper>(null);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [activeIndex, setActiveIndex] = useState(0);
+  const isLastSlide = activeIndex === onboarding.length - 1;
 
   return (
     <SafeAreaView className="flex-1 h-full items-center justify-between bg-white">
@@ -42,18 +44,28 @@ const welcome = () => {
               resizeMode="contain"
             />
             <View className="flex flex-row mt-10 w-full items-center justify-center">
-                <Text className="text-black text-3xl font-JakartaBold mx-10 text-center">
-                    {item.title}
-                </Text>
+              <Text className="text-black text-3xl font-JakartaBold mx-10 text-center">
+                {item.title}
+              </Text>
             </View>
             <View className="p-5">
-                <Text className="text-center text-[#858585] mx-10 mt-3 font-JakartaRegular">
-                    {item.description}
-                </Text>
+              <Text className="text-center text-[#858585] mx-10 mt-3 font-JakartaRegular">
+                {item.description}
+              </Text>
             </View>
           </View>
         ))}
       </Swiper>
+
+      <CustomButton
+        title={isLastSlide ? "Get Started" : "Next"}
+        onPress={() =>
+          isLastSlide
+            ? router.replace("/(auth)/signup")
+            : swiperRef.current?.scrollBy(1)
+        }
+        className="w-11/12 mt-10 mb-5 ml-5 mr-5"
+      />
 
       {/* 
       <TouchableOpacity className="bg-black p-4 rounded-lg mb-10 w-11/12">
