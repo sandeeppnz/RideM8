@@ -82,4 +82,6 @@ module.exports = {
     },
   },
   plugins: [],
+  presets: [require('nativewind/preset')], // Ensure this line is present
+
 };

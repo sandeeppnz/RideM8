@@ -2,12 +2,12 @@ import React from 'react'
 import { Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-const rides = () => {
+const signup = () => {
   return (
     <SafeAreaView>
-      <Text>rides</Text>
+      <Text>signup</Text>
     </SafeAreaView>
   )
 }
 
-export default rides;
+export default signup;
